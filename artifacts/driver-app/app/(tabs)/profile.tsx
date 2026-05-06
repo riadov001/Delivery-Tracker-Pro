@@ -72,7 +72,7 @@ export default function ProfileScreen() {
               key={star}
               name="star"
               size={16}
-              color={star <= Math.round(rating) ? "#F5A623" : colors.border}
+              color={star <= Math.round(rating) ? colors.warning : colors.border}
             />
           ))}
           <Text style={[styles.ratingText, { color: colors.foreground }]}>{rating}</Text>
@@ -82,9 +82,9 @@ export default function ProfileScreen() {
             <Feather name="award" size={12} color={colors.primary} />
             <Text style={[styles.badgeText, { color: colors.primary }]}>Top Driver</Text>
           </View>
-          <View style={[styles.badge, { backgroundColor: "#FFF8EC" }]}>
-            <Feather name="zap" size={12} color="#F5A623" />
-            <Text style={[styles.badgeText, { color: "#F5A623" }]}>Fast delivery</Text>
+          <View style={[styles.badge, { backgroundColor: colors.secondary }]}>
+            <Feather name="zap" size={12} color={colors.secondaryForeground} />
+            <Text style={[styles.badgeText, { color: colors.secondaryForeground }]}>Fast delivery</Text>
           </View>
         </View>
       </View>

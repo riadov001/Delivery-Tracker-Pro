@@ -238,9 +238,9 @@ export default function OrderDetailScreen() {
           </View>
 
           {order.tip > 0 && (
-            <View style={[styles.tipCard, { backgroundColor: "#FFF8EC", borderColor: "#F5A62333" }]}>
-              <Feather name="heart" size={16} color="#F5A623" />
-              <Text style={[styles.tipText, { color: "#B5791A" }]}>
+            <View style={[styles.tipCard, { backgroundColor: colors.secondary, borderColor: colors.primary + "33" }]}>
+              <Feather name="heart" size={16} color={colors.primary} />
+              <Text style={[styles.tipText, { color: colors.secondaryForeground }]}>
                 Customer left a £{order.tip.toFixed(2)} tip
               </Text>
             </View>

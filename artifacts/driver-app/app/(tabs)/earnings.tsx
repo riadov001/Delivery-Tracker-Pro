@@ -65,7 +65,7 @@ export default function EarningsScreen() {
         <Text style={[styles.title, { color: colors.foreground }]}>Earnings</Text>
       </View>
 
-      <View style={[styles.heroCard, { backgroundColor: colors.dark }]}>
+      <View style={[styles.heroCard, { backgroundColor: colors.primary }]}>
         <Text style={styles.heroLabel}>Today's earnings</Text>
         <Text style={styles.heroAmount}>£{todayEarnings.toFixed(2)}</Text>
         <View style={styles.heroRow}>
