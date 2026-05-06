@@ -1,0 +1,103 @@
+**✅ Voici le prompt optimisé pour l’Agent Replit** (copie-colle directement) :
+
+---
+
+**PROMPT POUR REPLIT AGENT :**
+
+You are a senior full-stack TypeScript engineer. We are working inside an **existing pnpm monorepo** (`Jatekapoli`) that already has a solid foundation.
+
+**Current state:**
+- Driver mobile app (Expo + Expo Router + react-native-maps + DriverContext)
+- API Server (Express 5 + TypeScript + Drizzle + PostgreSQL) with health check
+- API Client React generated with Orval (`@workspace/api-client-react`)
+- shadcn/ui + Tailwind setup
+- Clean workspace structure
+
+**Objective:** Extend this existing project into a full multi-role delivery platform (Client + Merchant + Driver + Admin) **without breaking what already works**.
+
+---
+
+### STRICT RULES (respect them 100%):
+
+1. **Never rewrite working code** — especially the driver app, custom-fetch, API client, or build setup.
+2. **Always analyze first** before coding.
+3. Make **incremental changes** — one feature at a time.
+4. Use existing tech stack: Drizzle ORM, Zod, Orval (codegen), React Query, Expo Router, Express 5.
+5. Keep everything inside the pnpm workspace.
+6. After each major step, suggest testing commands.
+
+---
+
+### STEP-BY-STEP EXECUTION PLAN:
+
+**Step 1: Analysis**  
+First, explore the current project structure and give me a short report:
+- What works well
+- What is missing for Client/Merchant/Admin
+- Current database schema
+- Auth status
+
+**Step 2: Backend Foundations** (do this first)
+- Add proper User model with roles (`CLIENT`, `MERCHANT`, `DRIVER`, `ADMIN`)
+- Implement JWT authentication + refresh token (using existing Drizzle)
+- Create auth routes (`/auth/register`, `/auth/login`)
+- Add role-based middleware
+- Update OpenAPI spec and regenerate API client with Orval
+
+**Step 3: Core Models & Routes**
+Add models + basic CRUD routes for:
+- Products (for merchants)
+- Orders (with status flow)
+- Deliveries (linked to orders)
+
+**Step 4: Mobile Apps**
+- Keep the existing Driver app untouched as much as possible
+- Create / extend Client app (browse, cart, order tracking)
+- Create / extend Merchant app (manage products, orders)
+- Use shared `@workspace/api-client-react`
+
+**Step 5: Admin Dashboard**
+Create a new Vite + React + shadcn dashboard for admins.
+
+---
+
+### PRIORITY ORDER (follow exactly):
+
+1. **Authentication + User roles** (most important)
+2. **Update database schema** (Drizzle)
+3. **Regenerate API client**
+4. **Basic order flow** (Client → Merchant → Driver)
+5. **Live location** for driver (keep existing)
+
+---
+
+**Workflow Instructions for you (Agent):**
+
+- Always start your response with the current step you're working on.
+- After each step, ask me: `"Ready for next step?"` or `"Test this now?"`
+- Show `git diff` or file changes clearly when modifying files.
+- Use `pnpm --filter <package>` commands.
+- Never delete or heavily refactor the driver app unless I approve.
+
+**Start now with Step 1: Full project analysis.**
+
+---
+
+**Ce prompt est très efficace car il :**
+- Force l’analyse avant tout
+- Protège le code existant (surtout le driver app)
+- Respecte la structure actuelle du monorepo
+- Garde un rythme incrémental (évite le chaos)
+- Utilise les outils déjà en place (Drizzle, Orval, etc.)
+
+---
+
+**Astuce d’utilisation :**
+
+Après avoir collé ce prompt, tu peux enchaîner avec :
+- `Continue with Step 2`
+- `Focus on authentication`
+- `Add merchant features`
+- etc.
+
+Veux-tu que je te fasse une **version encore plus courte et agressive** (pour aller ultra-rapide) ou celle-ci te convient ?

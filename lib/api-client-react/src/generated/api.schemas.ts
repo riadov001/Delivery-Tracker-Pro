@@ -3,8 +3,64 @@
  * Do not edit manually.
  * Api
  * API specification
- * OpenAPI spec version: 0.1.0
+ * OpenAPI spec version: 0.2.0
  */
 export interface HealthStatus {
   status: string;
+}
+
+export interface ErrorResponse {
+  error: string;
+}
+
+export type RegisterBodyRole =
+  (typeof RegisterBodyRole)[keyof typeof RegisterBodyRole];
+
+export const RegisterBodyRole = {
+  CLIENT: "CLIENT",
+  MERCHANT: "MERCHANT",
+  DRIVER: "DRIVER",
+  ADMIN: "ADMIN",
+} as const;
+
+export interface RegisterBody {
+  email: string;
+  /** @minLength 8 */
+  password: string;
+  /** @minLength 1 */
+  name: string;
+  role?: RegisterBodyRole;
+}
+
+export interface LoginBody {
+  email: string;
+  password: string;
+}
+
+export interface RefreshBody {
+  refreshToken: string;
+}
+
+export type UserProfileRole =
+  (typeof UserProfileRole)[keyof typeof UserProfileRole];
+
+export const UserProfileRole = {
+  CLIENT: "CLIENT",
+  MERCHANT: "MERCHANT",
+  DRIVER: "DRIVER",
+  ADMIN: "ADMIN",
+} as const;
+
+export interface UserProfile {
+  id: string;
+  email: string;
+  name: string;
+  role: UserProfileRole;
+  createdAt: string;
+}
+
+export interface AuthResponse {
+  accessToken: string;
+  refreshToken: string;
+  user: UserProfile;
 }
